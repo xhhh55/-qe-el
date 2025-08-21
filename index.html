@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مصطفى آدم يعقوب | مهندس طيران ومطور برمجيات</title>
+  <meta name="description" content="الموقع الشخصي لمصطفى آدم يعقوب – مهندس طيران ومطور مواقع وتطبيقات، حلول بلوك تشين، تحليل بيانات وذكاء اصطناعي." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+VegovlNEgH0bV0C1lv5d2e5x0i6f3xY6p9a7l+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#0b1220;          /* خلفية داكنة أنيقة */
+      --card:#0f172a;        /* بطاقة داكنة */
+      --muted:#94a3b8;       /* لون نص ثانوي */
+      --text:#e5e7eb;        /* نص أساسي فاتح */
+      --primary:#10b981;     /* أخضر حديث */
+      --primary-2:#06b6d4;   /* سماوي مساعد */
+      --accent:#f59e0b;      /* برتقالي للتأكيد */
+      --danger:#ef4444;
+      --shadow:0 20px 40px rgba(0,0,0,.35);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:"Tajawal",system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(180deg,#0b1220,#0a1020); color:var(--text);} 
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:1200px; margin-inline:auto; padding:24px}
+    .grid{display:grid; gap:24px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; border:1px solid transparent; font-weight:700; cursor:pointer; transition:.25s;}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-2)); color:#001b14; box-shadow:var(--shadow)}
+    .btn-primary:hover{filter:brightness(1.05) saturate(1.1)}
+    .btn-ghost{border-color:#233047; color:var(--text); background:rgba(255,255,255,.02)}
+    .btn-ghost:hover{background:rgba(255,255,255,.06)}
+
+    /* NAV */
+    nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,18,32,.6); border-bottom:1px solid #1f2a44}
+    .nav-wrap{display:flex; align-items:center; gap:16px; height:64px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .brand i{color:var(--primary)}
+    .spacer{flex:1}
+    .nav-links{display:flex; gap:12px}
+    .nav-links a{padding:8px 12px; border-radius:10px}
+    .nav-links a:hover{background:#111827}
+    .menu{display:none}
+
+    /* HERO */
+    .hero{padding:48px 0}
+    .hero .wrap{display:grid; gap:24px; grid-template-columns:1.2fr .8fr; align-items:center}
+    .hero .card{background:linear-gradient(180deg,#0f172a,#0a1020); border:1px solid #1f2a44; border-radius:var(--radius); box-shadow:var(--shadow); padding:28px}
+    .title{font-size:42px; line-height:1.2; margin:0 0 12px}
+    .subtitle{color:var(--muted); font-size:18px; margin-bottom:22px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0}
+    .badge{padding:6px 10px; background:#0b1325; border:1px solid #1f2a44; color:#cbd5e1; border-radius:999px; font-size:13px}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .hero .photo{border-radius:22px; overflow:hidden; border:1px solid #1f2a44}
+
+    /* SECTION */
+    section{padding:18px 0}
+    .section-head{display:flex; align-items:end; justify-content:space-between; margin-bottom:16px}
+    h2.section-title{font-size:26px; margin:0}
+    p.section-note{color:var(--muted); margin:0}
+
+    /* CARDS */
+    .card{background:linear-gradient(180deg,#0f172a,#0b1325); border:1px solid #1f2a44; padding:20px; border-radius:18px}
+
+    /* SERVICES */
+    .services{grid-template-columns:repeat(3,1fr)}
+    .service{position:relative; overflow:hidden}
+    .service header{display:flex; gap:12px; align-items:center; margin-bottom:8px}
+    .service .icon{width:44px; height:44px; display:grid; place-items:center; border-radius:12px; background:rgba(16,185,129,.12); border:1px solid #1f2a44}
+    .service .icon svg{width:22px; height:22px}
+    .service h3{margin:0; font-size:18px}
+    .service p{color:var(--muted); margin:6px 0 10px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{font-size:12px; padding:6px 10px; border:1px dashed #26435a; color:#cbd5e1; border-radius:999px}
+
+    /* PROJECTS */
+    .projects{grid-template-columns:repeat(3,1fr)}
+    .project{overflow:hidden}
+    .project img{border-radius:14px; border:1px solid #1f2a44}
+    .project .meta{display:flex; justify-content:space-between; align-items:center; margin-top:10px}
+    .tag{font-size:12px; color:#a5b4fc; border:1px solid #273162; padding:5px 8px; border-radius:999px}
+
+    /* PRICING */
+    .pricing{grid-template-columns:repeat(3,1fr)}
+    .price{position:relative}
+    .price h3{margin:0 0 6px}
+    .price .amount{font-size:28px; font-weight:800; color:var(--primary)}
+    .price ul{padding:0; margin:12px 0 0; list-style:none; color:#cbd5e1}
+    .price li{display:flex; gap:10px; align-items:flex-start; margin:8px 0}
+    .price li i{color:var(--primary)}
+
+    /* ABOUT */
+    .about{grid-template-columns:1fr 1fr}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .kpi{background:#0b1325; border:1px solid #1f2a44; border-radius:14px; padding:16px; text-align:center}
+    .kpi .num{font-size:24px; font-weight:800; color:var(--accent)}
+
+    /* CONTACT */
+    form{display:grid; gap:12px}
+    input, textarea{background:#0b1325; color:var(--text); border:1px solid #24314c; border-radius:12px; padding:12px}
+    textarea{min-height:120px; resize:vertical}
+
+    /* FOOTER */
+    footer{border-top:1px solid #1f2a44; margin-top:28px; padding:18px 0; color:#9aa4b7}
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px){
+      .hero .wrap{grid-template-columns:1fr}
+      .services,.projects,.pricing{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width: 640px){
+      .nav-links{display:none}
+      .menu{display:block}
+      .services,.projects,.pricing{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+      .title{font-size:34px}
+    }
+  </style>
+  <script>
+    // ==========================
+    // CONFIG — غيّر بياناتك هنا
+    // ==========================
+    const CONFIG = {
+      name: "مصطفى آدم يعقوب",
+      role: "مهندس طيران ومطور برمجيات",
+      email: "mustafa78379@gmail.com.com",
+      phone: "+9647867969795",
+      whatsapp: "https://wa.me/9647867969795",
+      instagram: "https://instagram.com/your_handle",
+      github: "https://github.com/xhhh55",
+      location: "بغداد، العراق",
+      cv: "./cv.pdf" // ضع رابط السيرة الذاتية إن وُجد
+    };
+
+    // تطبيق البيانات فور التحميل
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('[data-name]').forEach(e=>e.textContent=CONFIG.name);
+      document.querySelectorAll('[data-role]').forEach(e=>e.textContent=CONFIG.role);
+      document.querySelectorAll('a[href*="mailto:"]').forEach(a=>a.href = `mailto:${CONFIG.email}`);
+      const wa = document.getElementById('cta-wa'); if(wa) wa.href = CONFIG.whatsapp;
+      const ig = document.getElementById('cta-ig'); if(ig) ig.href = CONFIG.instagram;
+      const gh = document.getElementById('cta-gh'); if(gh) gh.href = CONFIG.github;
+      const cv = document.getElementById('cta-cv'); if(cv) cv.href = CONFIG.cv;
+      const loc = document.getElementById('loc'); if(loc) loc.textContent = CONFIG.location;
+    });
+  </script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "مصطفى آدم يعقوب",
+    "jobTitle": "مهندس طيران ومطور برمجيات",
+    "url": "https://example.com",
+    "address": {"@type":"PostalAddress","addressLocality":"Baghdad","addressCountry":"IQ"}
+  }
+  </script>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-wrap">
+      <a class="brand" href="#"><i class="fa-solid fa-seedling"></i> <span>TalenTree | Portfolio</span></a>
+      <div class="spacer"></div>
+      <div class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#projects">الأعمال</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#about">نبذة</a>
+        <a href="#contact">تواصل</a>
+      </div>
+      <a class="menu btn btn-ghost" href="#contact"><i class="fa-solid fa-envelope"></i> تواصل</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container wrap">
+      <div class="card">
+        <p class="badge">متاح لمشاريع جديدة</p>
+        <h1 class="title"><span data-name>مصطفى آدم يعقوب</span> — <span data-role>مهندس طيران ومطور برمجيات</span></h1>
+        <p class="subtitle">أبني حلول ذكية من الصفر: مواقع ومتاجر إلكترونية عالية الأداء، تطبيقات موبايل، بلوك تشين، وتحليل بيانات وذكاء اصطناعي تساعد أعمالك تنمو بسرعة وثبات.</p>
+        <div class="hero-cta">
+          <a id="cta-wa" class="btn btn-primary" href="#" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> تواصل واتساب
+          </a>
+          <a class="btn btn-ghost" href="mailto:you@example.com"><i class="fa-solid fa-paper-plane"></i> راسلني</a>
+          <a id="cta-cv" class="btn btn-ghost" href="#" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> السيرة الذاتية</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Web • PHP/JS/TS</span>
+          <span class="badge">React / Next.js</span>
+          <span class="badge">MySQL / Prisma</span>
+          <span class="badge">Firebase & Stripe</span>
+          <span class="badge">Blockchain</span>
+          <span class="badge">AI & Data</span>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="/photo_2025-08-20_01-35-35.jpg" alt="Workstation" />
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services" class="container">
+    <div class="section-head">
+      <h2 class="section-title">الخدمات</h2>
+      <p class="section-note">حلول عملية قابلة للتوسع في السوق</p>
+    </div>
+    <div class="grid services">
+      <!-- Web Dev / E‑commerce -->
+      <article class="card service">
+        <header>
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 4h18v6H3zM3 14h18v6H3z" stroke-width="1.5"/><path d="M7 7h.01M11 7h.01M15 7h.01M7 17h6" stroke-width="1.5"/></svg>
+          </span>
+          <div>
+            <h3>مواقع احترافية ومتاجر إلكترونية</h3>
+            <p>مواقع سريعة وآمنة مع لوحة تحكم، دفع إلكتروني، وسيو قوي.</p>
+          </div>
+        </header>
+        <div class="chips">
+          <span class="chip">Next.js</span><span class="chip">PHP/MySQL</span><span class="chip">Stripe/PayPal/EasyKash</span>
+        </div>
+      </article>
+
+      <!-- Blockchain -->
+      <article class="card service">
+        <header>
+          <span class="icon" style="background:rgba(6,182,212,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l7 4v6l-7 4-7-4V6l7-4z" stroke-width="1.5"/><path d="M19 10l-7 4-7-4" stroke-width="1.5"/></svg>
+          </span>
+          <div>
+            <h3>تطوير بلوك تشين وWeb3</h3>
+            <p>عقود ذكية، رموز (ERC‑20/NFT)، محافظ، ولوحات إدارة آمنة.</p>
+          </div>
+        </header>
+        <div class="chips">
+          <span class="chip">Solidity</span><span class="chip">Hardhat</span><span class="chip">Ethers.js</span>
+        </div>
+      </article>
+
+      <!-- Mobile Apps -->
+      <article class="card service">
+        <header>
+          <span class="icon" style="background:rgba(245,158,11,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="7" y="2" width="10" height="20" rx="2" stroke-width="1.5"/><circle cx="12" cy="18" r="1"/></svg>
+          </span>
+          <div>
+            <h3>برمجة تطبيقات الموبايل</h3>
+            <p>تطبيقات iOS/Android هجينة بأداء ممتاز وتجربة مستخدم فاخرة.</p>
+          </div>
+        </header>
+        <div class="chips">
+          <span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Firebase</span>
+        </div>
+      </article>
+
+      <!-- Data & AI -->
+      <article class="card service">
+        <header>
+          <span class="icon" style="background:rgba(34,197,94,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3a9 9 0 109 9" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          </span>
+          <div>
+            <h3>تحليل بيانات وحلول ذكاء اصطناعي</h3>
+            <p>نماذج تصنيف وتوقع، لوحات قياس، وروبوتات محادثة مخصصة.</p>
+          </div>
+        </header>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">scikit‑learn</span><span class="chip">OpenAI API</span>
+        </div>
+      </article>
+
+      <!-- UI/UX -->
+      <article class="card service">
+        <header>
+          <span class="icon" style="background:rgba(239,68,68,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="2" stroke-width="1.5"/><path d="M7 8h10M7 12h6" stroke-width="1.5"/></svg>
+          </span>
+          <div>
+            <h3>تصميم واجهات وتجربة مستخدم</h3>
+            <p>تصميمات عصرية، متجاوبة، ترفع التحويل وتقلل الارتداد.</p>
+          </div>
+        </header>
+        <div class="chips">
+          <span class="chip">Figma</span><span class="chip">Design Systems</span>
+        </div>
+      </article>
+
+      <!-- Consulting -->
+      <article class="card service">
+        <header>
+          <span class="icon" style="background:rgba(99,102,241,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v12H4z" stroke-width="1.5"/><path d="M8 20h8" stroke-width="1.5"/></svg>
+          </span>
+          <div>
+            <h3>استشارات تقنية وتسريع المنتجات</h3>
+            <p>اختيار التقنية، بناء خارطة طريق، وتحسين الأداء والتكلفة.</p>
+          </div>
+        </header>
+        <div class="chips">
+          <span class="chip">Architecture</span><span class="chip">DevOps</span><span class="chip">Scaling</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container">
+    <div class="section-head">
+      <h2 class="section-title">أعمال مختارة</h2>
+      <p class="section-note">عينات حقيقية يمكن البناء عليها</p>
+    </div>
+    <div class="grid projects">
+      <article class="card project">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="JF Sports" />
+        <div class="meta">
+          <div>
+            <h3>JF‑Sports (متجر رياضي)</h3>
+            <span class="tag">E‑commerce • PHP/MySQL • EasyKash</span>
+          </div>
+          <a class="btn btn-ghost" href="https://jf-sports.com" target="_blank">زيارة</a>
+        </div>
+      </article>
+      <article class="card project">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="TalenTree" />
+        <div class="meta">
+          <div>
+            <h3>TalenTree (منصة عمل حر)</h3>
+            <span class="tag">Next.js • Node/Prisma • Stripe</span>
+          </div>
+          <a class="btn btn-ghost" href="#" target="_blank">عرض</a>
+        </div>
+      </article>
+      <article class="card project">
+        <img src="/https://images.unsplash.com/photo-1555949963-aa79dcee981d?q=80&w=1200&auto=format&fit=crop" alt="AI Dashboard" />
+        <div class="meta">
+          <div>
+            <h3>لوحة ذكاء أعمال (AI)</h3>
+            <span class="tag">Python • FastAPI • OpenAI</span>
+          </div>
+          <a class="btn btn-ghost" href="#" target="_blank">تفاصيل</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="container">
+    <div class="section-head">
+      <h2 class="section-title">باقات الأسعار</h2>
+      <p class="section-note">أسعار تقريبية — يُحدد النهائي بعد جلسة متطلبات</p>
+    </div>
+    <div class="grid pricing">
+      <div class="card price">
+        <h3>موقع احترافي</h3>
+        <div class="amount">ابتداءً من 600$</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> تصميم مخصص + متجاوب</li>
+          <li><i class="fa-solid fa-check"></i> سرعة/SEO أساسي</li>
+          <li><i class="fa-solid fa-check"></i> لوحة تحكم بسيطة</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">اطلب عرض سعر</a>
+      </div>
+
+      <div class="card price">
+        <h3>تطبيق موبايل</h3>
+        <div class="amount">ابتداءً من 1200$</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> iOS & Android (React Native)</li>
+          <li><i class="fa-solid fa-check"></i> تكامل API/دفع</li>
+          <li><i class="fa-solid fa-check"></i> نشر للمتاجر</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">احجز استشارة</a>
+      </div>
+
+      <div class="card price">
+        <h3>بلوك تشين & ذكاء اصطناعي</h3>
+        <div class="amount">ابتداءً من 1500$</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> عقود ذكية / محافظ</li>
+          <li><i class="fa-solid fa-check"></i> لوحات تحليل ونماذج ML</li>
+          <li><i class="fa-solid fa-check"></i> أمان وتدقيق مبدئي</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">ابدأ الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <div class="section-head">
+      <h2 class="section-title">نبذة عني</h2>
+      <p class="section-note"><span id="loc">بغداد، العراق</span></p>
+    </div>
+    <div class="grid about">
+      <div class="card">
+        <p>
+          أنا <strong data-name>مصطفى</strong>، طالب هندسة تقنيات الطيران بجامعة الفراهيدي ومطور برمجيات شغوف. أحب بناء حلول عملية تجمع بين 
+          <strong>السرعة</strong> و<strong>الجودة</strong> و<strong>الأمان</strong>، مع اهتمام كبير بتجربة المستخدم.
+        </p>
+        <p>
+          أعمل على مشاريع طويلة الأمد، وأساعد الشركات الناشئة وأصحاب الأعمال على إطلاق منتجات قابلة للنمو. 
+          تقنياتي المفضلة: <em>Next.js، React، PHP/MySQL، Prisma، Firebase، Python، OpenAI، Solidity</em>.
+        </p>
+        <div class="kpis">
+          <div class="kpi"><div class="num">20+ </div><div>مشروع</div></div>
+          <div class="kpi"><div class="num">5⭐</div><div>تقييمات</div></div>
+          <div class="kpi"><div class="num">3 مجالات</div><div>Web • Mobile • AI/BC</div></div>
+        </div>
+      </div>
+      <div class="grid" style="gap:12px">
+        <div class="card">
+          <h3>مهارات رئيسية</h3>
+          <div class="badges">
+            <span class="badge">HTML/CSS/JS/TS</span>
+            <span class="badge">React/Next</span>
+            <span class="badge">PHP/Laravel</span>
+            <span class="badge">Node/Prisma</span>
+            <span class="badge">MySQL/Firebase</span>
+            <span class="badge">Python/AI</span>
+            <span class="badge">Solidity/Web3</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>خبرة وتعليم</h3>
+          <ul style="margin:10px 0 0; padding:0; list-style:none; color:#cbd5e1">
+            <li>• جامعة الفراهيدي — هندسة تقنيات الطيران (2021–حتى الآن)</li>
+            <li>• تطوير مواقع ومتاجر إلكترونية (3+ سنوات)</li>
+            <li>• مشاريع تحليل بيانات وذكاء اصطناعي وتكامل واجهات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <div class="section-head">
+      <h2 class="section-title">تواصل معي</h2>
+      <p class="section-note">رد سريع خلال 24 ساعة</p>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <form class="card" onsubmit="sendMsg(event)">
+        <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+     
+      <div class="card">
+        <h3>روابط مباشرة</h3>
+        <div class="badges" style="margin-top:10px">
+  <!-- واتساب -->
+  <a id="cta-wa" class="badge" href="https://wa.me/9647867969795" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> واتساب
+  </a>
+  <!-- اتصال مباشر -->
+  <a class="badge" href="tel:+9647867969795">
+    <i class="fa-solid fa-phone"></i> اتصال: 07867969795
+  </a>
+  <!-- إنستغرام -->
+  <a id="cta-ig" class="badge" href="#" target="_blank">
+    <i class="fa-brands fa-instagram"></i> إنستغرام
+  </a>
+  <!-- GitHub -->
+  <a id="cta-gh" class="badge" href="#" target="_blank">
+    <i class="fa-brands fa-github"></i> GitHub
+  </a>
+  <!-- بريد -->
+  <a class="badge" href="mailto:you@example.com">
+    <i class="fa-solid fa-envelope"></i> بريد
+  </a>
+</div>
+        <p style="margin-top:12px; color:#cbd5e1">أو احجز مكالمة سريعة للتعارف ومراجعة فكرتك خلال 15 دقيقة.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; gap:12px; align-items:center; justify-content:space-between">
+      <div>© <span id="year"></span> <span data-name>مصطفى آدم يعقوب</span>. جميع الحقوق محفوظة.</div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <a href="#" class="badge">سياسة الخصوصية</a>
+        <a href="#" class="badge">الشروط</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // إرسال رسالة — إعداد سريع باستخدام mailto (بدون Backend)
+    function sendMsg(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !subject || !message) return;
+      const body = encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\n\n${message}`);
+      const mail = `mailto:${CONFIG.email}?subject=${encodeURIComponent('[موقع شخصي] '+subject)}&body=${body}`;
+      const status = document.getElementById('form-status');
+      status.textContent = 'جاري فتح برنامج البريد…';
+      window.location.href = mail;
+      setTimeout(()=> status.textContent = 'إن لم يفتح البريد، راسلني مباشرة على واتساب أو البريد أعلاه.', 1200);
+    }
+  </script>
+</body>
+</html>
