@@ -1,346 +1,373 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>السيرة الذاتية - مصطفى آدم يعقوب</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Mustafa Adam Yaqoob</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    :root{
-      --bg:#eef3f8;
-      --card:#ffffff;
-      --primary:#1a3a5f;
-      --primary-dark:#0f2238;
-      --accent:#0ea5e9;
-      --muted:#6b7280;
-      --chip-bg:#e5edf7;
-      --border-soft:#d4dde8;
+    :root {
+      --bg: #eef3f8;
+      --card: #ffffff;
+      --primary: #1a3a5f;
+      --primary-dark: #0f2238;
+      --accent: #0ea5e9;
+      --muted: #6b7280;
+      --chip-bg: #e5edf7;
+      --border-soft: #d4dde8;
     }
 
-    *{box-sizing:border-box;}
+    * { box-sizing: border-box; }
 
-    body{
-      font-family:'Tajawal',sans-serif;
-      margin:0;
-      padding:20px 10px;
-      background:radial-gradient(circle at top left,#dbeafe,#eef3f8 40%,#e5e7eb);
-      color:#222;
-    }
-
-    .cv-wrapper{
-      max-width:1000px;
-      margin:auto;
+    body {
+      font-family: 'Inter', 'Tajawal', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 20px 10px;
+      background: radial-gradient(circle at top left, #dbeafe, #eef3f8 40%, #e5e7eb);
+      color: #111827;
     }
 
-    .cv-card{
-      background:var(--card);
-      box-shadow:0 18px 45px rgba(15,23,42,0.18);
-      border-radius:20px;
-      overflow:hidden;
-      border:1px solid rgba(148,163,184,0.35);
+    .cv-wrapper {
+      max-width: 1000px;
+      margin: auto;
     }
 
-    /* ===== أعلى السيرة الذاتية ===== */
-    .cv-header{
-      padding:28px 32px 20px;
-      background:linear-gradient(135deg,#0f172a,#1e293b);
-      color:#f9fafb;
-      position:relative;
-      overflow:hidden;
-    }
-    .cv-header::before{
-      content:"";
-      position:absolute;
-      inset:auto -80px 30px auto;
-      width:260px;
-      height:260px;
-      background:radial-gradient(circle,#38bdf8 0,#0f172a 60%);
-      opacity:0.25;
-      pointer-events:none;
+    .cv-card {
+      background: var(--card);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.35);
     }
 
-    .header-main{
-      position:relative;
-      z-index:1;
-      display:flex;
-      flex-wrap:wrap;
-      gap:20px;
-      align-items:flex-start;
-      justify-content:space-between;
+    /* ===== Header ===== */
+    .cv-header {
+      padding: 26px 32px 20px;
+      background: linear-gradient(135deg, #0f172a, #1f2937);
+      color: #f9fafb;
+      position: relative;
+      overflow: hidden;
     }
 
-    .name-block h1{
-      margin:0 0 8px;
-      font-size:2.1rem;
-      letter-spacing:.5px;
-    }
-    .name-block .title{
-      font-size:1.05rem;
-      color:#d1d5db;
-      margin-bottom:10px;
-    }
-    .header-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .header-tags span{
-      font-size:.78rem;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(15,23,42,0.8);
-      border:1px solid rgba(148,163,184,0.6);
-      color:#e5e7eb;
-      backdrop-filter:blur(6px);
+    .cv-header::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px 10px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, #38bdf8 0, #0f172a 60%);
+      opacity: 0.25;
+      pointer-events: none;
     }
 
-    .header-contact{
-      text-align:left;
-      direction:ltr;
-      min-width:220px;
-    }
-    .header-contact a{
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      gap:8px;
-      font-size:.9rem;
-      color:#e5e7eb;
-      text-decoration:none;
-      margin-bottom:6px;
-    }
-    .header-contact a i{
-      width:28px;
-      height:28px;
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(15,23,42,0.7);
-      border:1px solid rgba(148,163,184,0.4);
-      font-size:.9rem;
-    }
-    .header-contact a:hover{
-      color:#38bdf8;
+    .header-main {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: space-between;
     }
 
-    /* ===== محتوى السيرة الذاتية ===== */
-    .cv-body{
-      padding:24px 28px 20px;
-      display:grid;
-      grid-template-columns:1.2fr .9fr;
-      gap:26px;
+    .name-block h1 {
+      margin: 0 0 6px;
+      font-size: 2.1rem;
+      letter-spacing: 0.5px;
     }
 
-    h2.section-title{
-      font-size:1.1rem;
-      margin:0 0 10px;
-      color:var(--primary);
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    h2.section-title i{
-      font-size:.95rem;
-      color:var(--accent);
+    .name-block .title {
+      font-size: 1rem;
+      color: #d1d5db;
+      margin-bottom: 10px;
     }
 
-    p{
-      margin:0 0 8px;
-      line-height:1.7;
-      font-size:.95rem;
-      color:#111827;
+    .header-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    /* ملخص شخصي */
-    .summary-box{
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px dashed var(--border-soft);
-      background:linear-gradient(135deg,#f9fafb,#f3f4f6);
+    .header-tags span {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+      backdrop-filter: blur(6px);
     }
 
-    /* المهارات */
-    .skills-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-    }
-    .skills-grid span{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 10px;
-      background:var(--chip-bg);
-      border-radius:999px;
-      font-size:.82rem;
-      color:#111827;
-      border:1px solid rgba(148,163,184,0.55);
-    }
-    .skills-grid span i{
-      font-size:.8rem;
-      color:var(--primary);
+    .header-contact {
+      min-width: 240px;
+      text-align: right;
     }
 
-    /* الخبرة والتعليم (Timeline) */
-    .timeline{
-      border-right:2px solid var(--border-soft);
-      padding-right:14px;
-      margin-top:4px;
-    }
-    .timeline-item{
-      position:relative;
-      padding-right:18px;
-      margin-bottom:14px;
-    }
-    .timeline-item::before{
-      content:"";
-      position:absolute;
-      right:-12px;
-      top:4px;
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 0 4px #e0f2fe;
-    }
-    .timeline-item h3{
-      margin:0 0 3px;
-      font-size:.98rem;
-      color:var(--primary-dark);
-    }
-    .timeline-item .meta{
-      font-size:.8rem;
-      color:var(--muted);
-      margin-bottom:4px;
-    }
-    .timeline-item ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-      font-size:.87rem;
-      color:#111827;
-    }
-    .timeline-item ul li{
-      margin-bottom:3px;
+    .header-contact a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-bottom: 6px;
     }
 
-    /* الخدمات */
-    .services-list{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      font-size:.9rem;
-    }
-    .services-list li{
-      list-style:none;
-      display:flex;
-      align-items:flex-start;
-      gap:6px;
-    }
-    .services-list li i{
-      margin-top:3px;
-      font-size:.7rem;
-      color:var(--accent);
+    .header-contact a span {
+      white-space: nowrap;
     }
 
-    /* قسم جانبي */
-    .side-card{
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--border-soft);
-      background:#f9fafb;
-      margin-bottom:14px;
+    .header-contact a i {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.9rem;
     }
-    .side-card h3{
-      margin:0 0 5px;
-      font-size:.92rem;
-      color:var(--primary-dark);
+
+    .header-contact a:hover {
+      color: #38bdf8;
     }
+
+    /* ===== Body ===== */
+    .cv-body {
+      padding: 24px 28px 20px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 26px;
+    }
+
+    h2.section-title {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2.section-title i {
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0 0 8px;
+      line-height: 1.7;
+      font-size: 0.94rem;
+      color: #111827;
+    }
+
+    /* Summary */
+    .summary-box {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px dashed var(--border-soft);
+      background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+    }
+
+    /* Skills chips */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skills-grid span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: var(--chip-bg);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+    }
+
+    .skills-grid span i {
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+
+    /* Timeline (experience & education) */
+    .timeline {
+      border-left: 2px solid var(--border-soft);
+      padding-left: 14px;
+      margin-top: 4px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 14px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px #e0f2fe;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 3px;
+      font-size: 0.98rem;
+      color: var(--primary-dark);
+    }
+
+    .timeline-item .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .timeline-item ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.87rem;
+      color: #111827;
+    }
+
+    .timeline-item ul li {
+      margin-bottom: 3px;
+    }
+
+    /* Services */
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.9rem;
+    }
+
+    .services-list li {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .services-list li i {
+      margin-top: 3px;
+      font-size: 0.7rem;
+      color: var(--accent);
+    }
+
+    /* Side cards */
+    .side-card {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background: #f9fafb;
+      margin-bottom: 14px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 5px;
+      font-size: 0.92rem;
+      color: var(--primary-dark);
+    }
+
     .side-card p,
-    .side-card ul{
-      font-size:.86rem;
-      color:#111827;
-    }
-    .side-card ul{
-      list-style:none;
-      padding:0;
-      margin:2px 0 0;
-    }
-    .side-card ul li{
-      margin-bottom:3px;
+    .side-card ul {
+      font-size: 0.86rem;
+      color: #111827;
     }
 
-    /* زر الطباعة */
-    .cv-footer{
-      padding:0 28px 22px;
-      display:flex;
-      justify-content:center;
-    }
-    .btn-print{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:9px 18px;
-      border-radius:999px;
-      background:var(--primary);
-      color:#fff;
-      text-decoration:none;
-      font-size:.9rem;
-      border:none;
-      cursor:pointer;
-      transition:.2s;
-    }
-    .btn-print i{
-      font-size:.95rem;
-    }
-    .btn-print:hover{
-      background:var(--primary-dark);
+    .side-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 2px 0 0;
     }
 
-    /* استجابة */
-    @media (max-width:900px){
-      .cv-body{
-        grid-template-columns:1fr;
-      }
-      .header-contact{
-        text-align:right;
-        direction:rtl;
-      }
-      .header-contact a{
-        justify-content:flex-start;
-      }
+    .side-card ul li {
+      margin-bottom: 3px;
     }
 
-    @media (max-width:600px){
-      .cv-header{
-        padding:22px 18px 16px;
+    /* Footer / Print button */
+    .cv-footer {
+      padding: 0 28px 22px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-print i {
+      font-size: 0.95rem;
+    }
+
+    .btn-print:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cv-body {
+        grid-template-columns: 1fr;
       }
-      .cv-body{
-        padding:18px 16px 18px;
+      .header-contact {
+        text-align: left;
       }
-      .cv-footer{
-        padding:0 16px 18px;
+      .header-contact a {
+        justify-content: flex-start;
       }
     }
 
-    /* للطباعة */
-    @media print{
-      body{
-        background:#fff;
-        padding:0;
+    @media (max-width: 600px) {
+      .cv-header {
+        padding: 20px 18px 16px;
       }
-      .cv-card{
-        box-shadow:none;
-        border:none;
-        border-radius:0;
+      .cv-body {
+        padding: 18px 16px 18px;
       }
-      .cv-footer{
-        display:none;
+      .cv-footer {
+        padding: 0 16px 18px;
+      }
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .cv-card {
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+      }
+      .cv-footer {
+        display: none;
       }
     }
   </style>
@@ -348,195 +375,214 @@
 <body>
   <div class="cv-wrapper">
     <div class="cv-card">
-
-      <!-- Header -->
+      <!-- HEADER -->
       <header class="cv-header">
         <div class="header-main">
           <div class="name-block">
-            <h1>مصطفى آدم يعقوب</h1>
-            <div class="title">مهندس تقنيات طيران & مطوّر ويب متكامل</div>
+            <h1>Mustafa Adam Yaqoob</h1>
+            <div class="title">Aeronautical Engineering Student & Full-Stack Web Developer</div>
             <div class="header-tags">
-              <span>تطوير متاجر إلكترونية متكاملة</span>
-              <span>بلوك تشين & Web3</span>
-              <span>ذكاء اصطناعي ودمج الـ APIs</span>
+              <span>E-Commerce & Admin Dashboards</span>
+              <span>Blockchain & Web3</span>
+              <span>AI Integrations & Automation</span>
             </div>
           </div>
 
           <div class="header-contact">
             <a href="tel:+9647867969795">
-              <span>07867969795</span>
+              <span>+964 786 796 9795</span>
               <i class="fa fa-phone"></i>
             </a>
             <a href="mailto:you@example.com">
-              <span>you@example.com</span>
+              <span>mustafa78379@gmail.com</span>
               <i class="fa fa-envelope"></i>
             </a>
             <a href="https://wa.me/9647867969795" target="_blank">
-              <span>واتساب مباشر</span>
+              <span>WhatsApp</span>
               <i class="fa-brands fa-whatsapp"></i>
             </a>
             <a href="https://github.com/xhhh55" target="_blank">
               <span>github.com/xhhh55</span>
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="https://instagram.com/your_handle" target="_blank">
-              <span>Instagram</span>
-              <i class="fa-brands fa-instagram"></i>
+            <a href="https://xhhh55.github.io/-o/#contact" target="_blank">
+              <span>Portfolio</span>
+              <i class="fa fa-globe"></i>
             </a>
           </div>
         </div>
       </header>
 
-      <!-- Body -->
+      <!-- BODY -->
       <main class="cv-body">
-        <!-- العمود الرئيسي -->
+        <!-- MAIN COLUMN -->
         <div>
-          <!-- ملخص -->
+          <!-- SUMMARY -->
           <section>
-            <h2 class="section-title"><i class="fa fa-user"></i> الملخص الشخصي</h2>
+            <h2 class="section-title"><i class="fa fa-user"></i> Professional Summary</h2>
             <div class="summary-box">
               <p>
-                مهندس تقنيات طيران ومطوّر برمجيات، أعمل على تصميم وبناء مواقع ومتاجر إلكترونية احترافية،
-                أنظمة بلوك تشين، وتكامل حلول الذكاء الاصطناعي مع المشاريع الواقعية. لدي خبرة عملية في
-                بناء منصات متكاملة مثل <strong>JF-Sports</strong> و<strong>TalenTree</strong>، مع تركيز على الأداء،
-                الأمان، وتجربة المستخدم. أسعى لتطوير مساري المهني في مجال هندسة الطيران بالتوازي مع تطوير
-                حلول تقنية متقدمة يمكن الاعتماد عليها في السوق الحقيقي.
+                Highly motivated <strong>Aeronautical Engineering student</strong> and
+                <strong>Full-Stack Web Developer</strong> with solid experience in building complete
+                online systems, e-commerce platforms, admin dashboards, and AI-powered tools.
+                Skilled in <strong>web development, database design, API integrations, blockchain
+                solutions and automation</strong>. Creator of the full e-commerce ecosystem
+                <strong>JF-Sports</strong> and founder of <strong>TalenTree</strong>, a next-generation
+                freelancing platform enhanced with AI features. Passionate about aviation, aircraft
+                systems, and building long-term, high-impact tech products.
               </p>
             </div>
           </section>
 
-          <!-- المهارات -->
+          <!-- SKILLS -->
           <section>
-            <h2 class="section-title"><i class="fa fa-gears"></i> المهارات التقنية</h2>
+            <h2 class="section-title"><i class="fa fa-gears"></i> Technical Skills</h2>
             <div class="skills-grid">
               <span><i class="fa fa-code"></i> HTML, CSS, JavaScript, PHP, MySQL</span>
-              <span><i class="fa fa-desktop"></i> Frontend (React, Next.js, Tailwind)</span>
-              <span><i class="fa fa-server"></i> Backend (Node.js, Express, Prisma)</span>
-              <span><i class="fa-brands fa-ethereum"></i> بلوك تشين (Solidity, Web3.js, dApps)</span>
-              <span><i class="fa fa-mobile-screen"></i> تطبيقات (React Native, Expo)</span>
-              <span><i class="fa fa-database"></i> قواعد بيانات (PostgreSQL, Firebase, MySQL)</span>
-              <span><i class="fa fa-chart-line"></i> تحليل بيانات (Python, Pandas, NumPy)</span>
-              <span><i class="fa fa-robot"></i> ذكاء اصطناعي (ML, OpenAI API)</span>
-              <span><i class="fa fa-pen-ruler"></i> تصميم UI/UX وتجربة مستخدم</span>
-              <span><i class="fa fa-diagram-project"></i> إدارة مشاريع برمجية</span>
+              <span><i class="fa fa-desktop"></i> Frontend: React, Next.js, Tailwind</span>
+              <span><i class="fa fa-server"></i> Backend: Node.js, Express, Prisma</span>
+              <span><i class="fa-brands fa-ethereum"></i> Blockchain: Solidity, Web3.js, dApps</span>
+              <span><i class="fa fa-mobile-screen"></i> Mobile: React Native, Expo</span>
+              <span><i class="fa fa-database"></i> Databases: MySQL, PostgreSQL, Firebase</span>
+              <span><i class="fa fa-chart-line"></i> Data: Python, Pandas, NumPy</span>
+              <span><i class="fa fa-robot"></i> AI: ML basics, OpenAI API</span>
+              <span><i class="fa fa-pen-ruler"></i> UI/UX & Responsive Design</span>
+              <span><i class="fa fa-diagram-project"></i> Software Project Management</span>
             </div>
           </section>
 
-          <!-- الخبرة العملية -->
+          <!-- EXPERIENCE -->
           <section>
-            <h2 class="section-title"><i class="fa fa-briefcase"></i> الخبرة العملية والمشاريع</h2>
+            <h2 class="section-title"><i class="fa fa-briefcase"></i> Experience & Projects</h2>
             <div class="timeline">
               <div class="timeline-item">
-                <h3>مؤسس ومطوّر منصة TalenTree</h3>
-                <div class="meta">منصة عمل حر – 2025</div>
+                <h3>Founder & Lead Developer – TalenTree</h3>
+                <div class="meta">2025 – Present</div>
                 <ul>
-                  <li>بناء مفهوم منصة تنافس Upwork مع ميزات أكثر مرونة للمستقلين والعملاء.</li>
-                  <li>تصميم واجهات احترافية لصفحات الهبوط، الحسابات، ونظام المشاريع.</li>
-                  <li>التركيز على دمج الذكاء الاصطناعي في إدارة الطلبات، التقييمات، والتواصل.</li>
+                  <li>Designing a next-generation freelancing platform that competes with Upwork.</li>
+                  <li>Implementing AI-based features for project matching, proposal generation and rating.</li>
+                  <li>Building responsive front-end pages and planning scalable backend logic.</li>
+                  <li>Designing the core system architecture, user flows and data structure.</li>
                 </ul>
               </div>
 
               <div class="timeline-item">
-                <h3>مطور متجر JF-Sports</h3>
-                <div class="meta">متجر إلكتروني رياضي متكامل – 2024–2025</div>
+                <h3>Full-Stack Developer – JF-Sports E-Commerce System</h3>
+                <div class="meta">2024 – 2025</div>
                 <ul>
-                  <li>بناء متجر متكامل لبيع الأدوات الرياضية والملابس مع لوحة تحكم كاملة.</li>
-                  <li>ربط أنظمة الدفع الإلكتروني (EasyKash) وسلة مشتريات ديناميكية مع حساب تكاليف الشحن.</li>
-                  <li>إنشاء صفحات منتجات احترافية تعرض السعر القديم والجديد، نسبة الخصم، التقييم، والمنتجات المشابهة.</li>
+                  <li>Developed a full e-commerce store for sports products with a complete admin dashboard.</li>
+                  <li>Implemented cart logic with shipping calculation and discount codes.</li>
+                  <li>Integrated EasyKash for online payments plus Cash on Delivery workflows.</li>
+                  <li>Created professional product pages with old/new prices, discount badges, ratings and related items.</li>
+                  <li>Added PDF invoices generation and automatic WhatsApp notifications for orders.</li>
                 </ul>
               </div>
 
               <div class="timeline-item">
-                <h3>مشاريع بلوك تشين وعقود ذكية</h3>
+                <h3>Blockchain & Smart Contract Projects</h3>
                 <div class="meta">2025</div>
                 <ul>
-                  <li>العمل على فكرة شبكة بلوك تشين متكاملة تشمل التمويل والتطبيقات اللامركزية.</li>
-                  <li>تجربة تطوير عقود ذكية باستخدام Solidity وربطها بـ Web3.js.</li>
-                  <li>تصميم واجهات أمامية تتيح للمستخدم التعامل مع التوكنات والمحافظ بسهولة.</li>
+                  <li>Developing a full blockchain network concept including DeFi and dApp ecosystem.</li>
+                  <li>Writing and testing smart contracts in Solidity on test networks.</li>
+                  <li>Connecting contracts to Web3.js front-ends and token interaction flows.</li>
+                  <li>Planning the launch of a custom token with a dedicated landing website.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h3>Other Notable Projects</h3>
+                <div class="meta">Ongoing</div>
+                <ul>
+                  <li><strong>Sky Logic AI Builder</strong> – AI platform concept for building websites, apps, games and dashboards based on budget.</li>
+                  <li><strong>Luxury Car Wash Website</strong> – premium visual design with booking and gallery system.</li>
+                  <li><strong>Training Programs Platform</strong> – fitness programs website with categories and dynamic plans.</li>
                 </ul>
               </div>
             </div>
           </section>
 
-          <!-- التعليم -->
+          <!-- EDUCATION -->
           <section>
-            <h2 class="section-title"><i class="fa fa-graduation-cap"></i> التعليم</h2>
+            <h2 class="section-title"><i class="fa fa-graduation-cap"></i> Education</h2>
             <div class="timeline">
               <div class="timeline-item">
-                <h3>بكالوريوس هندسة تقنيات الطيران</h3>
-                <div class="meta">جامعة الفراهيدي – بغداد | متوقع التخرج: 2027</div>
+                <h3>B.Sc. in Aeronautical Engineering</h3>
+                <div class="meta">Al-Farahidi University – Baghdad, Iraq | Expected Graduation: 2027</div>
                 <ul>
-                  <li>دراسة أنظمة الطيران، الملاحة، الديناميكا الهوائية، وأنظمة التحكم.</li>
-                  <li>الاهتمام بالتخصص في أنظمة التحكم والمراقبة والملاحة الجوية.</li>
-                  <li>العمل على تقارير ومشاريع مثل <strong>Engine Cooling Methods</strong> ومشاريع جماعية أخرى.</li>
+                  <li>Studying aircraft systems, aerodynamics, navigation, avionics and control systems.</li>
+                  <li>Strong interest in avionics and aircraft control & navigation systems.</li>
+                  <li>Working on technical reports such as <em>Engine Cooling Methods</em> and team-based engineering projects.</li>
                 </ul>
               </div>
 
               <div class="timeline-item">
-                <h3>دورات وتعلم ذاتي</h3>
-                <div class="meta">أونلاين – مستمر</div>
+                <h3>Online Courses & Self-Learning</h3>
+                <div class="meta">Ongoing</div>
                 <ul>
-                  <li>دورات تطوير ويب (Frontend & Backend).</li>
-                  <li>كورسات في الذكاء الاصطناعي وتحليل البيانات.</li>
-                  <li>دورات في أساسيات البلوك تشين والعقود الذكية.</li>
+                  <li>Full-Stack Web Development (Frontend & Backend).</li>
+                  <li>Blockchain fundamentals and smart contract development.</li>
+                  <li>Machine Learning & Data Analysis with Python.</li>
+                  <li>Advanced JavaScript and UI/UX best practices.</li>
                 </ul>
               </div>
             </div>
           </section>
         </div>
 
-        <!-- العمود الجانبي -->
+        <!-- SIDE COLUMN -->
         <aside>
-          <!-- الخدمات -->
+          <!-- SERVICES -->
           <section>
-            <h2 class="section-title"><i class="fa fa-hand-holding-hand"></i> الخدمات</h2>
+            <h2 class="section-title"><i class="fa fa-hand-holding-hand"></i> Services</h2>
             <ul class="services-list">
-              <li><i class="fa fa-circle"></i> تطوير مواقع ومتاجر إلكترونية متكاملة مع لوحة تحكم.</li>
-              <li><i class="fa fa-circle"></i> إنشاء تطبيقات موبايل (Android & iOS) باستخدام React Native.</li>
-              <li><i class="fa fa-circle"></i> تصميم وتنفيذ حلول بلوك تشين وعقود ذكية.</li>
-              <li><i class="fa fa-circle"></i> تحليل بيانات وبناء نماذج ذكاء اصطناعي مخصصة.</li>
-              <li><i class="fa fa-circle"></i> استشارات تقنية وتخطيط بنية الأنظمة البرمجية.</li>
+              <li><i class="fa fa-circle"></i> Full e-commerce website development with admin dashboards.</li>
+              <li><i class="fa fa-circle"></i> Custom web systems (PHP / React / Node) with database integration.</li>
+              <li><i class="fa fa-circle"></i> Mobile app development (Android & iOS) using React Native.</li>
+              <li><i class="fa fa-circle"></i> Blockchain solutions: smart contracts, tokens and dApps.</li>
+              <li><i class="fa fa-circle"></i> AI automation, bots and OpenAI API integrations.</li>
+              <li><i class="fa fa-circle"></i> System design, technical consulting and performance optimization.</li>
             </ul>
           </section>
 
-          <!-- معلومات إضافية -->
+          <!-- LANGUAGES -->
           <section class="side-card">
-            <h3><i class="fa fa-language"></i> اللغات</h3>
+            <h3><i class="fa fa-language"></i> Languages</h3>
             <ul>
-              <li>العربية: لغة أم</li>
-              <li>الإنجليزية: مستوى متوسط (تطوير مستمر – التحضير لـ IELTS)</li>
+              <li>Arabic: Native</li>
+              <li>English: Intermediate (actively improving, preparing for IELTS)</li>
             </ul>
           </section>
 
+          <!-- INTERESTS -->
           <section class="side-card">
-            <h3><i class="fa fa-heart"></i> الاهتمامات</h3>
+            <h3><i class="fa fa-heart"></i> Interests</h3>
             <p>
-              الطيران، البرمجة، ريادة الأعمال التقنية، التجارة الإلكترونية،
-              كرة القدم (مركز مدافع)، بناء المشاريع الطويلة الأمد، والبحث والتطوير.
+              Aviation and aircraft systems, software development, blockchain technologies, e-commerce,
+              football (defender position), long-term tech projects and research & innovation.
             </p>
           </section>
 
+          <!-- GOALS -->
           <section class="side-card">
-            <h3><i class="fa fa-bullseye"></i> الأهداف المستقبلية</h3>
+            <h3><i class="fa fa-bullseye"></i> Career Goals</h3>
             <ul>
-              <li>الحصول على رخصة <strong>EASA B2</strong> والعمل في مجال صيانة إلكترونيات الطيران.</li>
-              <li>تطوير منصات تقنية بمستوى عالمي مثل TalenTree وSky Logic.</li>
-              <li>بناء مصدر دخل ثابت من العمل الحر والمنصات الإلكترونية.</li>
-              <li>الهجرة والدراسة والعمل في أوروبا (ألمانيا) خلال السنوات القادمة.</li>
+              <li>Obtain the <strong>EASA B2 Avionics License</strong> and work in aviation companies.</li>
+              <li>Launch <strong>TalenTree</strong> and <strong>Sky Logic</strong> as global tech platforms.</li>
+              <li>Build stable income from freelancing and digital products.</li>
+              <li>Live, study and work in Europe (Germany) around 2027.</li>
             </ul>
           </section>
         </aside>
       </main>
 
-      <!-- Footer / Print -->
+      <!-- FOOTER / PRINT -->
       <div class="cv-footer">
         <button class="btn-print" onclick="window.print()">
           <i class="fa fa-print"></i>
-          طباعة / حفظ كـ PDF
+          Print / Save as PDF
         </button>
       </div>
     </div>
   </div>
 </body>
 </html>
-
