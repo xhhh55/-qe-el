@@ -4,87 +4,539 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>السيرة الذاتية - مصطفى آدم يعقوب</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    body { font-family: 'Tajawal', sans-serif; margin: 0; padding: 0; background: #f4f6f8; color: #222; }
-    .container { max-width: 900px; margin: auto; background: #fff; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #1a3a5f; }
-    h1 { text-align: center; margin-bottom: 10px; }
-    .contact { text-align: center; margin-bottom: 20px; }
-    .contact a { margin: 0 10px; color: #1a3a5f; text-decoration: none; }
-    section { margin-bottom: 25px; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 8px; }
-    .skills span { display: inline-block; margin: 5px; padding: 8px 12px; background: #eaeef3; border-radius: 8px; font-size: 14px; }
-    .btn { display: inline-block; padding: 10px 20px; background: #1a3a5f; color: #fff; border-radius: 8px; text-decoration: none; margin-top: 10px; }
-    .btn:hover { background: #0f2238; }
-    .print { text-align: center; margin-top: 20px; }
+    :root{
+      --bg:#eef3f8;
+      --card:#ffffff;
+      --primary:#1a3a5f;
+      --primary-dark:#0f2238;
+      --accent:#0ea5e9;
+      --muted:#6b7280;
+      --chip-bg:#e5edf7;
+      --border-soft:#d4dde8;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      font-family:'Tajawal',sans-serif;
+      margin:0;
+      padding:20px 10px;
+      background:radial-gradient(circle at top left,#dbeafe,#eef3f8 40%,#e5e7eb);
+      color:#222;
+    }
+
+    .cv-wrapper{
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .cv-card{
+      background:var(--card);
+      box-shadow:0 18px 45px rgba(15,23,42,0.18);
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,0.35);
+    }
+
+    /* ===== أعلى السيرة الذاتية ===== */
+    .cv-header{
+      padding:28px 32px 20px;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:#f9fafb;
+      position:relative;
+      overflow:hidden;
+    }
+    .cv-header::before{
+      content:"";
+      position:absolute;
+      inset:auto -80px 30px auto;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle,#38bdf8 0,#0f172a 60%);
+      opacity:0.25;
+      pointer-events:none;
+    }
+
+    .header-main{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+
+    .name-block h1{
+      margin:0 0 8px;
+      font-size:2.1rem;
+      letter-spacing:.5px;
+    }
+    .name-block .title{
+      font-size:1.05rem;
+      color:#d1d5db;
+      margin-bottom:10px;
+    }
+    .header-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .header-tags span{
+      font-size:.78rem;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.8);
+      border:1px solid rgba(148,163,184,0.6);
+      color:#e5e7eb;
+      backdrop-filter:blur(6px);
+    }
+
+    .header-contact{
+      text-align:left;
+      direction:ltr;
+      min-width:220px;
+    }
+    .header-contact a{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      font-size:.9rem;
+      color:#e5e7eb;
+      text-decoration:none;
+      margin-bottom:6px;
+    }
+    .header-contact a i{
+      width:28px;
+      height:28px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(15,23,42,0.7);
+      border:1px solid rgba(148,163,184,0.4);
+      font-size:.9rem;
+    }
+    .header-contact a:hover{
+      color:#38bdf8;
+    }
+
+    /* ===== محتوى السيرة الذاتية ===== */
+    .cv-body{
+      padding:24px 28px 20px;
+      display:grid;
+      grid-template-columns:1.2fr .9fr;
+      gap:26px;
+    }
+
+    h2.section-title{
+      font-size:1.1rem;
+      margin:0 0 10px;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    h2.section-title i{
+      font-size:.95rem;
+      color:var(--accent);
+    }
+
+    p{
+      margin:0 0 8px;
+      line-height:1.7;
+      font-size:.95rem;
+      color:#111827;
+    }
+
+    /* ملخص شخصي */
+    .summary-box{
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px dashed var(--border-soft);
+      background:linear-gradient(135deg,#f9fafb,#f3f4f6);
+    }
+
+    /* المهارات */
+    .skills-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .skills-grid span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      background:var(--chip-bg);
+      border-radius:999px;
+      font-size:.82rem;
+      color:#111827;
+      border:1px solid rgba(148,163,184,0.55);
+    }
+    .skills-grid span i{
+      font-size:.8rem;
+      color:var(--primary);
+    }
+
+    /* الخبرة والتعليم (Timeline) */
+    .timeline{
+      border-right:2px solid var(--border-soft);
+      padding-right:14px;
+      margin-top:4px;
+    }
+    .timeline-item{
+      position:relative;
+      padding-right:18px;
+      margin-bottom:14px;
+    }
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      right:-12px;
+      top:4px;
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px #e0f2fe;
+    }
+    .timeline-item h3{
+      margin:0 0 3px;
+      font-size:.98rem;
+      color:var(--primary-dark);
+    }
+    .timeline-item .meta{
+      font-size:.8rem;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+    .timeline-item ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      font-size:.87rem;
+      color:#111827;
+    }
+    .timeline-item ul li{
+      margin-bottom:3px;
+    }
+
+    /* الخدمات */
+    .services-list{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      font-size:.9rem;
+    }
+    .services-list li{
+      list-style:none;
+      display:flex;
+      align-items:flex-start;
+      gap:6px;
+    }
+    .services-list li i{
+      margin-top:3px;
+      font-size:.7rem;
+      color:var(--accent);
+    }
+
+    /* قسم جانبي */
+    .side-card{
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--border-soft);
+      background:#f9fafb;
+      margin-bottom:14px;
+    }
+    .side-card h3{
+      margin:0 0 5px;
+      font-size:.92rem;
+      color:var(--primary-dark);
+    }
+    .side-card p,
+    .side-card ul{
+      font-size:.86rem;
+      color:#111827;
+    }
+    .side-card ul{
+      list-style:none;
+      padding:0;
+      margin:2px 0 0;
+    }
+    .side-card ul li{
+      margin-bottom:3px;
+    }
+
+    /* زر الطباعة */
+    .cv-footer{
+      padding:0 28px 22px;
+      display:flex;
+      justify-content:center;
+    }
+    .btn-print{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 18px;
+      border-radius:999px;
+      background:var(--primary);
+      color:#fff;
+      text-decoration:none;
+      font-size:.9rem;
+      border:none;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .btn-print i{
+      font-size:.95rem;
+    }
+    .btn-print:hover{
+      background:var(--primary-dark);
+    }
+
+    /* استجابة */
+    @media (max-width:900px){
+      .cv-body{
+        grid-template-columns:1fr;
+      }
+      .header-contact{
+        text-align:right;
+        direction:rtl;
+      }
+      .header-contact a{
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width:600px){
+      .cv-header{
+        padding:22px 18px 16px;
+      }
+      .cv-body{
+        padding:18px 16px 18px;
+      }
+      .cv-footer{
+        padding:0 16px 18px;
+      }
+    }
+
+    /* للطباعة */
+    @media print{
+      body{
+        background:#fff;
+        padding:0;
+      }
+      .cv-card{
+        box-shadow:none;
+        border:none;
+        border-radius:0;
+      }
+      .cv-footer{
+        display:none;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>مصطفى آدم يعقوب</h1>
-    <div class="contact">
-      <a href="tel:+9647867969795"><i class="fa fa-phone"></i> 07867969795</a>
-      <a href="mailto:you@example.com"><i class="fa fa-envelope"></i> you@example.com</a>
-      <a href="https://wa.me/9647867969795" target="_blank"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-      <a href="https://github.com/xhhh55" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://instagram.com/your_handle" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    </div>
+  <div class="cv-wrapper">
+    <div class="cv-card">
 
-    <section>
-      <h2>الملخص الشخصي</h2>
-      <p>مهندس طيران ومطور برمجيات متخصص في تطوير المواقع والتطبيقات، إنشاء حلول بلوك تشين، تحليل البيانات، وبناء أنظمة ذكاء اصطناعي متقدمة. أتمتع بخبرة عملية في مشاريع حقيقية مثل JF-Sports وTalenTree، وأسعى لتقديم حلول تقنية مبتكرة وعملية.</p>
-    </section>
+      <!-- Header -->
+      <header class="cv-header">
+        <div class="header-main">
+          <div class="name-block">
+            <h1>مصطفى آدم يعقوب</h1>
+            <div class="title">مهندس تقنيات طيران & مطوّر ويب متكامل</div>
+            <div class="header-tags">
+              <span>تطوير متاجر إلكترونية متكاملة</span>
+              <span>بلوك تشين & Web3</span>
+              <span>ذكاء اصطناعي ودمج الـ APIs</span>
+            </div>
+          </div>
 
-    <section>
-      <h2>المهارات</h2>
-      <div class="skills">
-        <span>تطوير مواقع (HTML, CSS, JavaScript, PHP, MySQL)</span>
-        <span>تطوير Frontend (React, Next.js, Tailwind)</span>
-        <span>تطوير Backend (Node.js, Express, Prisma)</span>
-        <span>تطوير بلوك تشين (Solidity, Web3.js, dApps)</span>
-        <span>برمجة تطبيقات (React Native, Expo)</span>
-        <span>إدارة قواعد البيانات (PostgreSQL, Firebase, MySQL)</span>
-        <span>تحليل البيانات (Python, Pandas, NumPy)</span>
-        <span>ذكاء اصطناعي (Machine Learning, OpenAI API)</span>
-        <span>تصميم واجهات UI/UX</span>
-        <span>إدارة مشاريع برمجية</span>
+          <div class="header-contact">
+            <a href="tel:+9647867969795">
+              <span>07867969795</span>
+              <i class="fa fa-phone"></i>
+            </a>
+            <a href="mailto:you@example.com">
+              <span>you@example.com</span>
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/9647867969795" target="_blank">
+              <span>واتساب مباشر</span>
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/xhhh55" target="_blank">
+              <span>github.com/xhhh55</span>
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://instagram.com/your_handle" target="_blank">
+              <span>Instagram</span>
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Body -->
+      <main class="cv-body">
+        <!-- العمود الرئيسي -->
+        <div>
+          <!-- ملخص -->
+          <section>
+            <h2 class="section-title"><i class="fa fa-user"></i> الملخص الشخصي</h2>
+            <div class="summary-box">
+              <p>
+                مهندس تقنيات طيران ومطوّر برمجيات، أعمل على تصميم وبناء مواقع ومتاجر إلكترونية احترافية،
+                أنظمة بلوك تشين، وتكامل حلول الذكاء الاصطناعي مع المشاريع الواقعية. لدي خبرة عملية في
+                بناء منصات متكاملة مثل <strong>JF-Sports</strong> و<strong>TalenTree</strong>، مع تركيز على الأداء،
+                الأمان، وتجربة المستخدم. أسعى لتطوير مساري المهني في مجال هندسة الطيران بالتوازي مع تطوير
+                حلول تقنية متقدمة يمكن الاعتماد عليها في السوق الحقيقي.
+              </p>
+            </div>
+          </section>
+
+          <!-- المهارات -->
+          <section>
+            <h2 class="section-title"><i class="fa fa-gears"></i> المهارات التقنية</h2>
+            <div class="skills-grid">
+              <span><i class="fa fa-code"></i> HTML, CSS, JavaScript, PHP, MySQL</span>
+              <span><i class="fa fa-desktop"></i> Frontend (React, Next.js, Tailwind)</span>
+              <span><i class="fa fa-server"></i> Backend (Node.js, Express, Prisma)</span>
+              <span><i class="fa-brands fa-ethereum"></i> بلوك تشين (Solidity, Web3.js, dApps)</span>
+              <span><i class="fa fa-mobile-screen"></i> تطبيقات (React Native, Expo)</span>
+              <span><i class="fa fa-database"></i> قواعد بيانات (PostgreSQL, Firebase, MySQL)</span>
+              <span><i class="fa fa-chart-line"></i> تحليل بيانات (Python, Pandas, NumPy)</span>
+              <span><i class="fa fa-robot"></i> ذكاء اصطناعي (ML, OpenAI API)</span>
+              <span><i class="fa fa-pen-ruler"></i> تصميم UI/UX وتجربة مستخدم</span>
+              <span><i class="fa fa-diagram-project"></i> إدارة مشاريع برمجية</span>
+            </div>
+          </section>
+
+          <!-- الخبرة العملية -->
+          <section>
+            <h2 class="section-title"><i class="fa fa-briefcase"></i> الخبرة العملية والمشاريع</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3>مؤسس ومطوّر منصة TalenTree</h3>
+                <div class="meta">منصة عمل حر – 2025</div>
+                <ul>
+                  <li>بناء مفهوم منصة تنافس Upwork مع ميزات أكثر مرونة للمستقلين والعملاء.</li>
+                  <li>تصميم واجهات احترافية لصفحات الهبوط، الحسابات، ونظام المشاريع.</li>
+                  <li>التركيز على دمج الذكاء الاصطناعي في إدارة الطلبات، التقييمات، والتواصل.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h3>مطور متجر JF-Sports</h3>
+                <div class="meta">متجر إلكتروني رياضي متكامل – 2024–2025</div>
+                <ul>
+                  <li>بناء متجر متكامل لبيع الأدوات الرياضية والملابس مع لوحة تحكم كاملة.</li>
+                  <li>ربط أنظمة الدفع الإلكتروني (EasyKash) وسلة مشتريات ديناميكية مع حساب تكاليف الشحن.</li>
+                  <li>إنشاء صفحات منتجات احترافية تعرض السعر القديم والجديد، نسبة الخصم، التقييم، والمنتجات المشابهة.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h3>مشاريع بلوك تشين وعقود ذكية</h3>
+                <div class="meta">2025</div>
+                <ul>
+                  <li>العمل على فكرة شبكة بلوك تشين متكاملة تشمل التمويل والتطبيقات اللامركزية.</li>
+                  <li>تجربة تطوير عقود ذكية باستخدام Solidity وربطها بـ Web3.js.</li>
+                  <li>تصميم واجهات أمامية تتيح للمستخدم التعامل مع التوكنات والمحافظ بسهولة.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- التعليم -->
+          <section>
+            <h2 class="section-title"><i class="fa fa-graduation-cap"></i> التعليم</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3>بكالوريوس هندسة تقنيات الطيران</h3>
+                <div class="meta">جامعة الفراهيدي – بغداد | متوقع التخرج: 2027</div>
+                <ul>
+                  <li>دراسة أنظمة الطيران، الملاحة، الديناميكا الهوائية، وأنظمة التحكم.</li>
+                  <li>الاهتمام بالتخصص في أنظمة التحكم والمراقبة والملاحة الجوية.</li>
+                  <li>العمل على تقارير ومشاريع مثل <strong>Engine Cooling Methods</strong> ومشاريع جماعية أخرى.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h3>دورات وتعلم ذاتي</h3>
+                <div class="meta">أونلاين – مستمر</div>
+                <ul>
+                  <li>دورات تطوير ويب (Frontend & Backend).</li>
+                  <li>كورسات في الذكاء الاصطناعي وتحليل البيانات.</li>
+                  <li>دورات في أساسيات البلوك تشين والعقود الذكية.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- العمود الجانبي -->
+        <aside>
+          <!-- الخدمات -->
+          <section>
+            <h2 class="section-title"><i class="fa fa-hand-holding-hand"></i> الخدمات</h2>
+            <ul class="services-list">
+              <li><i class="fa fa-circle"></i> تطوير مواقع ومتاجر إلكترونية متكاملة مع لوحة تحكم.</li>
+              <li><i class="fa fa-circle"></i> إنشاء تطبيقات موبايل (Android & iOS) باستخدام React Native.</li>
+              <li><i class="fa fa-circle"></i> تصميم وتنفيذ حلول بلوك تشين وعقود ذكية.</li>
+              <li><i class="fa fa-circle"></i> تحليل بيانات وبناء نماذج ذكاء اصطناعي مخصصة.</li>
+              <li><i class="fa fa-circle"></i> استشارات تقنية وتخطيط بنية الأنظمة البرمجية.</li>
+            </ul>
+          </section>
+
+          <!-- معلومات إضافية -->
+          <section class="side-card">
+            <h3><i class="fa fa-language"></i> اللغات</h3>
+            <ul>
+              <li>العربية: لغة أم</li>
+              <li>الإنجليزية: مستوى متوسط (تطوير مستمر – التحضير لـ IELTS)</li>
+            </ul>
+          </section>
+
+          <section class="side-card">
+            <h3><i class="fa fa-heart"></i> الاهتمامات</h3>
+            <p>
+              الطيران، البرمجة، ريادة الأعمال التقنية، التجارة الإلكترونية،
+              كرة القدم (مركز مدافع)، بناء المشاريع الطويلة الأمد، والبحث والتطوير.
+            </p>
+          </section>
+
+          <section class="side-card">
+            <h3><i class="fa fa-bullseye"></i> الأهداف المستقبلية</h3>
+            <ul>
+              <li>الحصول على رخصة <strong>EASA B2</strong> والعمل في مجال صيانة إلكترونيات الطيران.</li>
+              <li>تطوير منصات تقنية بمستوى عالمي مثل TalenTree وSky Logic.</li>
+              <li>بناء مصدر دخل ثابت من العمل الحر والمنصات الإلكترونية.</li>
+              <li>الهجرة والدراسة والعمل في أوروبا (ألمانيا) خلال السنوات القادمة.</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+
+      <!-- Footer / Print -->
+      <div class="cv-footer">
+        <button class="btn-print" onclick="window.print()">
+          <i class="fa fa-print"></i>
+          طباعة / حفظ كـ PDF
+        </button>
       </div>
-    </section>
-
-    <section>
-      <h2>الخبرة العملية</h2>
-      <ul>
-        <li><strong>مؤسس TalenTree</strong> – منصة عمل حر تنافس Upwork وتقدم ميزات أكثر مرونة للمستقلين والعملاء (2025).</li>
-        <li><strong>مطور JF-Sports</strong> – متجر إلكتروني رياضي متكامل مع لوحة تحكم ودفع إلكتروني (2025).</li>
-        <li><strong>مشاريع بلوك تشين</strong> – تطوير شبكة بلوك تشين متكاملة، عقود ذكية، وإطلاق توكن خاص (2025).</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>التعليم</h2>
-      <ul>
-        <li>بكالوريوس هندسة تقنيات الطيران – جامعة الفراهيدي (متوقع التخرج 2027).</li>
-        <li>دورات متخصصة في تطوير البرمجيات، الذكاء الاصطناعي، والبلوك تشين.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>الخدمات</h2>
-      <ul>
-        <li>تطوير مواقع ومتاجر إلكترونية متكاملة.</li>
-        <li>بناء تطبيقات موبايل (iOS & Android).</li>
-        <li>إنشاء حلول بلوك تشين وعقود ذكية.</li>
-        <li>تحليل بيانات وبناء نماذج ذكاء اصطناعي.</li>
-        <li>استشارات تقنية وحلول برمجية متكاملة.</li>
-      </ul>
-    </section>
-
-    <div class="print">
-      <a href="#" class="btn" onclick="window.print()"><i class="fa fa-print"></i> طباعة / حفظ PDF</a>
     </div>
   </div>
 </body>
 </html>
+
